@@ -1,0 +1,6 @@
+img2pdf
+pdf2image
+Pillow
+playwright
+pytesseract
+PyPDF2
