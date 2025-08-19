@@ -1,0 +1,3 @@
+ python bot.py "H:\Bot\undoc.pdf" "H:\Bot\translated.pdf"  
+
+Clears all the folders after pdf creation
