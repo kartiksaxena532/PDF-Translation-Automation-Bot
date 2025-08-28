@@ -1,4 +1,3 @@
-# app_gui.py  — Local desktop GUI -> EXE (blazing-fast: no artificial delays)
 import sys, os, re, time, subprocess, asyncio, shutil
 from urllib.request import urlopen
 from urllib.error import URLError
@@ -22,43 +21,19 @@ from tkinter import ttk, filedialog, messagebox
 # ------------ Configuration (portable & safe) ------------
 APP_NAME = "PDF Translator Bot - By Kartik Saxena"
 
-def app_base_dir() -> Path:
+def app_base_dir(drive_letter: str = None) -> Path:
     """
-    Windows: prefer a NON-C: drive (highest free space & writable) at <Drive>:\PDF_Translator_Bot.
-    If none available, fall back to %LOCALAPPDATA%\PDF_Translator_Bot.
-    Non-Windows: ~/.local/share/PDF_Translator_Bot
+    Allow the user to manually specify their preferred drive for storage.
+    User can fill in the drive letter part themselves. 
     """
     if sys.platform.startswith("win"):
-        best_base = None
-        best_free = -1
-        for letter in "DEFGHIJKLMNOPQRSTUVWXYZ":
-            root = Path(f"{letter}:/")
-            if not root.exists():
-                continue
-            try:
-                free = shutil.disk_usage(root).free
-                base = root / "PDF_Translator_Bot"
-                base.mkdir(parents=True, exist_ok=True)
-                probe = base / ".write_test.tmp"
-                with open(probe, "w", encoding="utf-8") as f:
-                    f.write("ok")
-                try:
-                    probe.unlink(missing_ok=True)
-                except:
-                    pass
-                if free > best_free:
-                    best_free = free
-                    best_base = base
-            except Exception:
-                continue
-        if best_base:
-            return best_base
-
-        root = Path(os.environ.get("LOCALAPPDATA") or Path.home() / ".local" / "share")
-        base = root / "PDF_Translator_Bot"
+        # Use user input or default to C:
+        drive_letter = drive_letter or "C:"
+        base = Path(drive_letter) / "PDF_Translator_Bot"
         base.mkdir(parents=True, exist_ok=True)
         return base
 
+    # For non-Windows systems
     root = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local" / "share"))
     base = root / "PDF_Translator_Bot"
     base.mkdir(parents=True, exist_ok=True)
@@ -135,7 +110,7 @@ def find_browser_exe() -> str:
 
 def launch_chrome_if_needed(log):
     if dbg_ready():
-        log("Chrome debug port is ready.")
+        log("Chrome would be starting any minute soon please wait....")
         return
     exe = find_browser_exe()
     USER_DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -348,11 +323,22 @@ async def translate_images(
             await page.close()
         finally:
             if close_browser:
+                # Try a graceful browser-wide close via DevTools
+                try:
+                    # Ask the debugging browser to exit entirely
+                    cdp = await browser.new_browser_cdp_session()
+                    await cdp.send("Browser.close")
+                except Exception:
+                    pass
+
+                # Close Playwright connection (safe even if Browser.close already ended it)
                 try:
                     await browser.close()
-                    log("Closed Chrome window.")
-                except: pass
+                except Exception:
+                    pass
 
+                # If we launched Chrome ourselves, kill the whole process tree as fallback
+              
     return results
 
 def build_pdf(images: List[Path], out_pdf: Path, log):
@@ -408,21 +394,25 @@ class App(tk.Tk):
         self.geometry("720x380")
         self.resizable(False, False)
 
-        default_out = app_base_dir() / "translated.pdf"
-
         self.in_var  = tk.StringVar()
-        self.out_var = tk.StringVar(value=str(default_out))
+        self.out_var = tk.StringVar(value="")  # Empty output path by default
         self.lang    = tk.StringVar(value="en")
         self.dpi     = tk.IntVar(value=150)
         self.close_chrome = tk.BooleanVar(value=True)
 
         frm = ttk.Frame(self, padding=12); frm.pack(fill="both", expand=True)
+
+        # Input PDF section
         ttk.Label(frm, text="Input PDF:").grid(row=0, column=0, sticky="w")
         ttk.Entry(frm, textvariable=self.in_var, width=64).grid(row=0, column=1, sticky="ew", padx=6)
         ttk.Button(frm, text="Browse…", command=self.pick_in).grid(row=0, column=2)
+
+        # Output PDF section (empty path by default)
         ttk.Label(frm, text="Output PDF:").grid(row=1, column=0, sticky="w")
         ttk.Entry(frm, textvariable=self.out_var, width=64).grid(row=1, column=1, sticky="ew", padx=6)
         ttk.Button(frm, text="Choose…", command=self.pick_out).grid(row=1, column=2)
+
+        # Target language and DPI section
         opt = ttk.Frame(frm); opt.grid(row=2, column=0, columnspan=3, sticky="ew", pady=(8,4))
         ttk.Label(opt, text="Target language (tl):").grid(row=0, column=0, sticky="w")
         ttk.Entry(opt, textvariable=self.lang, width=8).grid(row=0, column=1, padx=6)
@@ -430,11 +420,13 @@ class App(tk.Tk):
         ttk.Entry(opt, textvariable=self.dpi, width=6).grid(row=0, column=3, padx=6)
         ttk.Checkbutton(opt, text="Close Chrome on finish", variable=self.close_chrome).grid(row=0, column=4, padx=12)
 
+        # Buttons to start and quit
         btns = ttk.Frame(frm); btns.grid(row=3, column=0, columnspan=3, pady=6, sticky="ew")
         self.run_btn = ttk.Button(btns, text="Translate PDF", command=self.start)
         self.run_btn.pack(side="left")
         ttk.Button(btns, text="Quit", command=self.destroy).pack(side="right")
 
+        # Log display section
         self.log = tk.Text(frm, height=14); self.log.grid(row=4, column=0, columnspan=3, sticky="nsew", pady=(6,0))
         frm.columnconfigure(1, weight=1)
 
@@ -452,6 +444,8 @@ class App(tk.Tk):
     def start(self):
         if not self.in_var.get():
             messagebox.showwarning(APP_NAME, "Choose an input PDF."); return
+        if not self.out_var.get():
+            messagebox.showwarning(APP_NAME, "Specify an output path."); return
         self.run_btn.configure(state="disabled")
         def worker():
             try:

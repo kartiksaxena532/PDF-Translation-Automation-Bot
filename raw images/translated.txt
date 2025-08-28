@@ -1,0 +1,640 @@
+
+===== page-001.png =====
+JP 4102147 B2 2008.6.18
+
+(12) Patent Gazette (B2)
+
+(11)Patent number
+
+Patent No. 4102147
+
+(P4102147)
+
+(24) Date of registration: March 28, 2008 (March 28, 2008)
+
+(19) Japan Patent Office (JP)
+
+(45) Issue date: June 18, 2008 (2008.6.18)
+
+(51) Int. Cl.
+
+BE
+
+HO1Q
+
+3/24
+
+(2006.01)
+
+HO1Q 3/24
+
+HO1Q
+
+5/01
+
+(2006.01)
+
+HO1Q
+
+5/01
+
+HO1Q 13/08
+
+(2006.01)
+
+HO1Q 13/08
+
+(21) Application number
+
+(22) Application date
+
+(65) Publication number
+
+September 18, 2002 (2002.9.18)
+
+Patent Publication No. 2003-124730 (P2003-124730A)
+
+(43)Release date
+
+April 25, 2003 (2003.4.25)
+
+Patent Application No. 2002-271956 (P2002-271956) (73) Patent holder 399040520
+
+Examination request date
+
+August 19, 2005 (2005.8.19)
+
+(31) Priority claim number 09/956,753
+
+(32) Priority date
+
+September 19, 2001 (2001.9.19)
+
+(33) Country of priority
+
+United States (US)
+
+Number of claims: 23 (total 10 pages)
+
+Nokia Corporation
+
+Keilarahdentie 4, 02150 Espoo, Republic of Finland
+
+(74)Agent 100065226
+
+Patent Attorney Sota Asahina
+
+(74) Agent 100098257
+
+Patent Attorney Keiji Saki
+
+(72) Inventor Antero Rechtla
+
+Republic of Finland, 20810 Turku, Iteinen Rantakatu 70 p. 24
+
+Censor Yitong Hyo-sin
+
+Continued on last page
+
+(54) [Title of Invention] Internal multi-band antenna
+
+(57) [Claims]
+
+[Request 1]
+
+A multi-band wireless antenna structure for use in a portable communication device includes:
+
+with short circuit plane;
+
+a first radiating element formed of a first conductive region having a first resonant frequency,
+
+a first radiating element, the first radiating element having a first end connected to the shorting plane for shorting the first radiating element, the first radiating element having a first feed point for feeding power disposed adjacent to the first end; and a second radiating element formed by a second conductive region disposed adjacent to the first conductive region, the second conductive region for shorting the second radiating element.
+
+a second radiating element having a second end electrically connected to the first end of the first conductive region for feeding the first radiating element and for sharing the first feeding point for feeding the first radiating element.
+
+Na structure and;
+
+a third radiating element formed of a third conductive region adjacent the sub-antenna structure,
+
+The third conductive region has a third end connected to the shorting plane for shorting a third radiating element, and the third radiating element has a second feed for feeding the third radiating element disposed adjacent to the third end.
+
+a third radiating element having a point;
+
+a first switching device operable between an open position and a closed position, connecting between the first feed point and the shorting plane;
+
+a second power supply point operable between an open position and a closed position and configured to connect the second power supply point to the shorting plane;
+
+a second switching device for connecting the
+
+10
+
+20
+
+===== page-002.png =====
+(2)
+
+JP 4102147 B2 2008.6.18
+
+When the second switching device is operated to a closed position, thereby shorting the second feed point, and the first switching device is operated to an open position to enable powering to the first feed point, the second radiating element has a second resonant frequency substantially lower than the first resonant frequency, and the third radiating element has a third resonant frequency generally higher than the first resonant frequency.
+
+have,
+
+A multi-band wireless antenna wherein when the first switching device is operated to a closed position, thereby shorting the first feed point, and the second switching device is operated to an open position to enable powering of the second feed point, the third radiating element generally has a fourth resonant frequency that is higher than the third resonant frequency.
+
+【Request item 2】
+
+2. The multiband wireless antenna of claim 1, wherein when the first switching device is operated to a closed position and the second switching device is operated to an open position, the first radiating element has a fifth resonant frequency substantially equal to the third resonant frequency.
+
+[Request 3]
+
+2. The multiband wireless antenna according to claim 1, wherein the first resonant frequency is substantially in the range of 1710 MHz to 1880 MHz.
+
+[Request 4]
+
+2. The multiband wireless antenna according to claim 1, wherein the second resonant frequency is substantially in the range of 880 MHz to 960 MHz.
+
+【Request 5】
+
+2. The multiband wireless antenna according to claim 1, wherein the third resonant frequency is substantially in the range of 1850 MHz to 1990 MHz.
+
+[Request 6]
+
+The fourth resonant frequency is substantially in the range of 1920 MHz to 2170 MHz.
+
+1. A multi-band wireless antenna as described in claim 1.
+
+[Request item 7]
+
+2. The multi-band optical fiber according to claim 1, wherein the third conductive region is adjacent to the first conductive region.
+
+wireless antenna.
+
+[Request item 8]
+
+2. The multi-band optical fiber according to claim 1, wherein the third conductive region is adjacent to the second conductive region.
+
+wireless antenna.
+
+[Request 9]
+
+10. The method of claim 9, wherein the second conductive region is adjacent to the first conductive region on at least two sides.
+
+1. A multi-band wireless antenna as described in claim 1.
+
+[Request 10]
+
+2. The multi-band wireless antenna of claim 1, wherein the second conductive region is adjacent to the first conductive region on at least three sides.
+
+[Request 11]
+
+2. The multi-switching device of claim 1, wherein the switching device comprises at least one PIN diode.
+
+band radio antenna.
+
+[Request 12]
+
+2. The multi-level switching device of claim 1, wherein the switching device comprises at least one FET switch.
+
+wireless antenna.
+
+[Request 13]
+
+10. The multi-band wireless antenna of claim 1, wherein the switching device comprises at least one MEMS switch.
+
+[Request 14]
+
+2. The multi-band wireless communication system of claim 1, wherein the switching device comprises a solid-state switch.
+
+wire antenna.
+
+10
+
+20
+
+30
+
+40
+
+[Request 15]
+
+50
+
+===== page-003.png =====
+(3)
+
+JP 4102147 B2 2008.6.18
+
+2. The multi-band wireless antenna of claim 1, wherein the portable communication device is a mobile phone.
+
+[Request 16]
+
+10. The multi-band wireless antenna of claim 1, wherein the portable communication device is a personal digital assistant.
+
+[Request 17]
+
+10. The multi-band wireless antenna of claim 1, wherein the portable communication device is a portable computer.
+
+[Request 18]
+
+with short circuit plane;
+
+a sub-antenna structure comprising: a first radiating element formed of a first conductive region having a first resonant frequency, the first conductive region having a first end connected to the shorting plane for shorting the first radiating element, the first radiating element having a first feed point disposed adjacent to the first end; and a second radiating element formed of a second conductive region disposed adjacent to the first conductive region, the second conductive region having a second end electrically connected to the first end of the first conductive region for shorting the second radiating element and sharing the first feed point for feeding;
+
+1. A method for achieving at least four resonant frequencies of a multi-band antenna structure including: a third radiating element formed of a third conductive region adjacent to the sub-antenna structure, the third conductive region having a third end connected to the shorting plane for shorting the third radiating element, the third radiating element having a second feed point for feeding located adjacent the third end, the method comprising:
+
+providing a first switching device operable between an open position and a closed position, the first switching device connecting between the first feed point and the shorting plane;
+
+providing a second switching device operable between an open position and a closed position, the second switching device connecting between the second feed point and the shorting plane; and
+
+The second switching device is set to a closed position, thereby shorting the second feed point, and the first switching device is in an open position to enable the first feed point to be powered, thereby generating a second resonant frequency in the second radiating element that is substantially lower than the first resonant frequency, and generating a third resonant frequency in the third radiating element that is generally higher than the first resonant frequency.
+
+the process of generating, or
+
+setting the first switching device in a closed position, thereby shorting the first feed point, and the second switching device in an open position to enable powering of the second feed point, thereby causing the third radiating element to generally generate a fourth resonant frequency higher than the third resonant frequency.
+
+[Request 19]
+
+2. The method of claim 1, wherein when the first switching device is set to a closed position and the second switching device is set to an open position, the first radiating element generates a fifth resonant frequency substantially equal to the third resonant frequency.
+
+[Request 20]
+
+18. The second resonant frequency is substantially in the range of 880 MHz to 960 MHz.
+
+Method described.
+
+[Request 21]
+
+The first resonant frequency is substantially in the range of 1710 MHz to 1880 MHz.
+
+The method described in 18.
+
+[Request 22]
+
+The third resonant frequency is substantially in the range of 1850 MHz to 1990 MHz.
+
+The method described in 18.
+
+[Request 23]
+
+The fourth resonant frequency is substantially in the range of 1920 MHz to 2170 MHz.
+
+10
+
+20
+
+30
+
+40
+
+50
+
+===== page-004.png =====
+(4)
+
+JP 4102147 B2 2008.6.18
+
+The method described in 18.
+
+[Detailed description of the invention]
+
+【0001】
+
+[Technical Field to which the Invention Belongs]
+
+The present invention relates generally to radio antennas, and more particularly to internal multi-band antennas used in portable communication devices such as mobile phones.
+
+【0002】
+
+[Prior art and problems to be solved by the invention]
+
+(1) The development of miniature antennas for mobile phones has received much attention recently due to the miniaturization of mobile phones, the need to keep the amount of radio frequency (RF) power absorbed by users below a certain level regardless of the size of the mobile phone, and the adoption of multimode phones. It is useful, desirable, and even necessary to provide multiband antennas mounted inside the mobile phone body, and these antennas should be capable of operating within multiple systems such as E-GSM900 (880 MHz to 960 MHz), GSM1800 (1710 MHz to 1880 MHz), PCS1900 (859 MHz to 1990 MHz), and UMTS (1900 MHz to 2170 MHz). Shorted patch antennas or planar inverted-F antennas (PIFAs) have been used to provide two or more resonant frequencies. For example, Liu et al. disclose a dual-band PIFA (see Non-Patent Document 1), Pankinaho discloses a dual-resonance antenna structure for several frequency ranges that can be used as an internal antenna for a mobile phone (see Patent Document 1), Isohata et al. disclose a planar antenna with a relatively low specific absorption rate (SAR) value (see Patent Document 2), and Song et al. disclose a triple-band PIFA (see Non-Patent Document 2). Since mobile phones capable of operating at UMTS frequencies will become a reality in the near future, it is useful and desirable to provide an antenna structure that can operate at UMTS frequencies as well as GSM frequencies.
+
+preferable.
+
+【0003】
+
+[Patent Document 1]
+
+U.S. Patent No. 6,140,966
+
+[Patent Document 2]
+
+European Patent No. 0997970A1
+
+[Non-patent document 1]
+
+Dual-Frequency Planar Inverted-F Antenna, IEEE Reports on Antennas and Propagation, 45th Edition,
+
+No. 10, October 1997, pp. 1451-1458
+
+[Non-patent document 2]
+
+Triple-Band Planar Inverted-F Antenna, Digest of the IEEE International Symposium on Antennas and Propagation, 2nd Edition, Orlando, Florida, July 11-16, 1999, p. 908
+
+-911
+
+【0004】
+
+[Means to solve the problem]
+
+According to a first aspect of the present invention, there is provided a multi-band radio antenna structure for use in a mobile communication device.
+
+The structure is
+
+with short circuit plane;
+
+a sub-antenna structure comprising: a first radiating element formed of a first conductive region having a first resonant frequency, the first conductive region having a first end connected to the shorting plane for shorting the first radiating element, the first radiating element having a first feed point disposed adjacent to the first end; and a second radiating element formed of a second conductive region disposed adjacent to the first conductive region, the second conductive region having a second end electrically connected to the first end of the first conductive region for shorting the second radiating element and sharing the first feed point for feeding;
+
+10
+
+20
+
+30
+
+40
+
+50
+
+===== page-005.png =====
+(5)
+
+JP 4102147 B2 2008.6.18
+
+a third radiating element formed of a third conductive region adjacent to the sub-antenna structure, the third conductive region having a third end connected to the shorting plane for shorting the third radiating element, the third radiating element having a second feed point for feeding the third radiating element disposed adjacent the third end;
+
+a first switching device operable to either an open position or a closed position, connecting the first feed point and the shorting plane;
+
+a second switching device operable to either an open position or a closed position, connecting the second feed point and the shorting plane;
+
+The second switching device is operated to a closed position, thereby shorting the second power supply point, and the first switching device is operated to an open position to enable power to the first power supply point.
+
+the second radiating element has a second resonant frequency substantially lower than the first resonant frequency;
+
+and the third radiating element has a third resonant frequency that is higher than the first resonant frequency as a whole.
+
+have,
+
+When the first switching device is operated to a closed position, thereby shorting the first feed point, and the second switching device is operated to an open position to enable power to the second feed point, the third radiating element generally has a fourth resonant frequency higher than the third resonant frequency.
+
+【0005】
+
+According to the present invention, when the first switching device is operated to a closed position and the second switching device is operated to an open position, the first radiating element has a fifth resonant frequency substantially equal to the third resonant frequency.
+
+【0006】
+
+According to the present invention, the first resonant frequency is substantially in the range of 1710 MHz to 1880 MHz, the second resonant frequency is substantially in the range of 880 MHz to 960 MHz, the third resonant frequency is substantially in the range of 1850 MHz to 1990 MHz, and the fourth resonant frequency is substantially in the range of 1920 MHz to 2170 MHz.
+
+【0007】
+
+According to the present invention, the third conductive region is adjacent to the first conductive region or adjacent to the second conductive region.
+
+【0008】
+
+According to the present invention, the first and second radiating elements are planar radiating elements arranged substantially on a common plane.
+
+It is a radiation element.
+
+【0009】
+
+According to the present invention, the first, second and third radiating elements are arranged substantially in a common plane.
+
+It is a planar radiating element.
+
+【0010】
+
+According to the present invention, the first, second and third radiating elements are planar radiating elements, but some or all of said radiating elements are foldable such that each folded radiating element lies in two or more intersecting planes.
+
+【0011】
+
+According to a second aspect of the present invention, there is provided a short circuit plane;
+
+a sub-antenna structure comprising: a first radiating element formed of a first conductive region having a first resonant frequency, the first conductive region having a first end connected to the shorting plane for shorting the first radiating element, the first radiating element having a first feed point disposed adjacent to the first end; and a second radiating element formed of a second conductive region disposed adjacent to the first conductive region, the second conductive region having a second end electrically connected to the first end of the first conductive region for shorting the second radiating element and sharing the first feed point for feeding;
+
+a third radiating element formed of a third conductive region adjacent the sub-antenna structure,
+
+10
+
+20
+
+30
+
+40
+
+50
+
+===== page-006.png =====
+(6)
+
+JP 4102147 B2 2008.6.18
+
+a third radiating element, the third conductive region having a third end connected to the shorting plane for shorting the third radiating element, the third radiating element having a second feed point for feeding the third radiating element disposed adjacent the third end, the method comprising:
+
+providing a first switching device operable to either an open position or a closed position, the first switching device connecting between the first feed point and the shorting plane;
+
+providing a second switching device operable to either an open or closed position, the second switching device connecting the second feed point and the shorting plane; and
+
+setting the second switching device to a closed position, thereby shorting the second feed point, and setting the first switching device to an open position to enable powering to the first feed point, thereby causing the second radiating element to have a second resonant frequency substantially lower than the first resonant frequency, and causing the third radiating element to have a third resonant frequency generally higher than the first resonant frequency; or
+
+and setting the first switching device to a closed position, thereby shorting the first feed point, and setting the second switching device to an open position to enable powering of the second feed point, thereby causing the third radiating element to generally generate a fourth resonant frequency higher than the third resonant frequency.
+
+【0012】
+
+According to the present invention, when the first switching device is set to a closed position and the second switching device is set to an open position, the first radiating element generates a fifth resonant frequency substantially equal to the third resonant frequency.
+
+【0013】
+
+[Embodiment of the invention]
+
+The invention will become apparent from the description when read in conjunction with Figures 1-3(a) and (b).
+
+FIG. 1 illustrates a radiating element of a multiband antenna structure 1 according to a preferred embodiment of the present invention. As shown in the figure, the antenna structure 1 includes a sub-antenna structure 10 having a short-circuit plane 5, a first radiating element 20, a third radiating element 30, and a third radiating element 40. In the sub-antenna structure 10, the first radiating element 20 is a substantially planar electrical connection element having a first end 22 for shorting the first radiating element 20 to the short-circuit plane 5 at a short-circuit point G1. Thus, the first radiating element 20 is a short-circuit patch having a first resonant frequency. Preferably, the first resonant frequency is substantially in the range of 1710 MHz to 1880 MHz. A feed line 24 is provided adjacent to the first end 22 to feed the first radiating element 20. The second radiating element 30 is a substantially flat, strip-shaped conductive region surrounding the first radiating element 20, with a gap 34 therebetween. The second radiating element 30 has a second end 32. The second end 32 is connected to the first end 22 of the first radiating element 20 to short-circuit the second radiating element 30. Thus, the second radiating element 30 becomes a short-circuit patch while simultaneously allowing the second radiating element 30 to share the feed line 24 for power supply. The third radiating element 40 is physically separated from the structure 10 except for their connection through the shorting plane. As shown in the figure, the third radiating element 40 is a substantially planar conductive element having a third end 42 connected to the shorting plane 5 to short-circuit the third radiating element 40 to the shorting plane 5 at shorting point G2. Thus, the third radiating element 40 is also a short-circuit patch. Adjacent to the third end 42, a feed line 50 is provided to feed the third radiating element 40.
+
+【0015】
+
+As shown in Figure 1, all of the radiating elements 20, 30, 40 are disposed substantially in a common plane. However, it is possible that only two of the radiating elements 20, 30, 40 are disposed in the same plane, or that each of them is disposed in a different plane. Furthermore, one or more of these radiating elements may be folded so that the folded elements are disposed in different planes.
+
+10
+
+20
+
+30
+
+40
+
+50
+
+===== page-007.png =====
+(7)
+
+JP 4102147 B2 2008.6.18
+
+The feed lines 24, 50 are shown passing through the shorting plane 5 via openings A1, A2 to connect to their respective radio frequency modules. However, it is not necessary for the feed lines 24, 50 to pass through the shorting plane and thus reach the radio frequency modules.
+
+【0016】
+
+As shown in FIG. 2, the feed line 24 is connected to the radio frequency module 70 for power supply, while the feed line 50 is connected to the radio frequency module 72 for power supply. A switching device 60 is connected between the feed line 24 and the shorting plane 5, and a switching device 62 is connected between the feed line 50 and the shorting plane 5. Each of the switching devices 60, 62 can be operated to an open or closed position. As shown in FIG. 3(a), the switching device 60 is operated to an open position to enable power supply of the feed line 24 between the radio frequency module 70 and the sub-antenna structure 10, while the switching device 62 is operated to a closed position, thereby shorting the feed line 50 to the shorting plane 5. When the switching devices 60, 62 are in these positions, the second radiating element 30 has a second resonant frequency substantially lower than the first resonant frequency, and the third radiating element 40 has a third resonant frequency generally higher than the first resonant frequency. Preferably, the second resonant frequency is substantially in the range of 880 MHz to 960 MHz, and the third resonant frequency is substantially in the range of 1850 MHz to 1990 MHz. However, when the switching device 62 is operated to the open position to enable power supply through the power supply line 50 between the radio frequency module 72 and the third radiating element 40, and the switching device 60 is operated to the closed position, thereby shorting the power supply line 24 to the shorting plane 5, the third radiating element 40 has a fourth resonant frequency generally higher than the third resonant frequency, and the first radiating element 20 has a fifth resonant frequency substantially equal to the third resonant frequency. Preferably, the fifth resonant frequency is substantially in the range of 1920 MHz to 2170 MHz.
+
+【0017】
+
+The switching devices 60, 62 may be PIN diodes, FET switches, MEMS switches, or
+
+may be a solid-state switch.
+
+【0018】
+
+According to a preferred embodiment of the present invention, all of the conductive regions that make up the radiating elements of the antenna structure may be disposed on a common plane, although they may be disposed on different planes. The antenna structure may be made more compact by using narrow strips of conductive regions with serpentine patterns in two or three dimensions. Furthermore, it is not necessary for radiating element 30 to surround radiating element 20, as shown in FIG. 1.
+
+【0019】
+
+The invention is disclosed in relation to GSM and UMTS. However, the resonant frequency can be made higher or lower by changing the dimensions and geometry of one or more of the radiating elements. For example, it is possible to use the same antenna for short-range wireless connections (such as Bluetooth®).
+
+【0020】
+
+The multi-band wireless antenna of the present invention is suitable for use in mobile phones, personal digital assistant (PDA) devices,
+
+Or it can be used in electronic devices such as portable computers.
+
+【0021】
+
+Thus, while the present invention has been described with respect to preferred embodiments thereof, it will be understood by those skilled in the art that the foregoing and various other changes, omissions and deviations in form and detail thereof may be made therein without departing from the spirit and scope of the invention.
+
+【0022】
+
+[Effect of the invention]
+
+The internal multi-band antenna of the present invention is capable of operating at multiple frequencies, providing a mobile phone antenna that can operate at UMTS frequencies as well as GSM frequencies.
+
+[Brief explanation of the drawing]
+
+10
+
+20
+
+30
+
+40
+
+50
+
+===== page-008.png =====
+40
+
+30
+
+34
+
+50
+
+20
+
+30
+
+(8)
+
+JP 4102147 B2 2008.6.18
+
+FIG. 1 is a perspective view showing a radiating element of a multi-band antenna structure according to a preferred embodiment of the present invention.
+
+FIG. 2 is a schematic diagram showing a switching device connected between a feed point and a shorting plane.
+
+3(a) and 3(b) are schematic diagrams showing the switching configuration of a multi-band antenna structure according to the present invention, respectively;
+
+50
+
+MS
+
+10
+
+20
+
+[Figure 1]
+
+22
+
+A2-
+
+[Figure 2]
+
+22.
+
+2
+
+5
+
+MS
+
+60
+
+2
+
+70
+
+42 G2
+
+G1
+
+A1
+
+===== page-009.png =====
+a
+
+10
+
+50
+
+(9)
+
+JP 4102147 B2 2008.6.18
+
+[Figure 3]
+
+650
+
+70
+
+40
+
+20
+
+10
+
+24
+
+20
+
+30
+
+20
+
+72
+
+20
+
+===== page-010.png =====
+(10)
+
+JP 4102147 B2 2008.6.18
+
+Continuation of front page
+
+(56) References
+
+Special Publication No. 07-007462 (JP, A)
+
+Japanese Patent Publication No. 11-150415 (JP, A)
+
+Japanese Patent Publication No. 61-236203 (JP, A)
+
+Patent Publication No. 2000-004116 (JP,A)
+
+Special List 2000-509581 (JP,A)
+
+International Publication No. 01/029927 (WO, A1)
+
+International Publication No. 99/028990 (WO, A1)
+
+International Publication No. 99/065108 (WO, A1)
+
+(58) Field of investigation (Int.C., DB name)
+
+HD1Q 3/00-13/28、21/00-25/04
