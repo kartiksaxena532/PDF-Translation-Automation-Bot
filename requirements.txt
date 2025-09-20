@@ -5,3 +5,4 @@ pymupdf
 pillow
 img2pdf
 playwright
+python-multipart
