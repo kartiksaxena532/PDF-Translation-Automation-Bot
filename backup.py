@@ -3,7 +3,6 @@ import os
 import asyncio
 import shutil
 import time
-import subprocess
 from pathlib import Path
 from typing import List, Optional
 from mimetypes import guess_type
@@ -42,69 +41,13 @@ def new_run_dir() -> Path:
     """Unique per run; avoids wiping anything outside this isolated sandbox."""
     from datetime import datetime
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-    d = app_base_dir() / f"run-{stamp}"
+    d = app_base_dir() / f"run-{stamp}"`
     (d / "raw").mkdir(parents=True, exist_ok=True)
     (d / "translated").mkdir(parents=True, exist_ok=True)
     return d
 
 
-# ------------ Chrome remote debugging attach ------------
-DEBUG_PORT = 9222
-REMOTE = f"http://localhost:{DEBUG_PORT}"
-CHROME_CANDIDATES = [
-    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
-    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
-]
-EDGE_CANDIDATES = [
-    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
-    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
-]
-USER_DATA_DIR = Path.home() / ".pw_chrome_profile"
-
 IMG_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tif", ".tiff"}
-
-
-def dbg_ready() -> bool:
-    try:
-        with urlopen(f"{REMOTE}/json/version", timeout=1.5) as r:
-            return r.status == 200
-    except Exception:
-        try:
-            with urlopen(f"{REMOTE}/json/version", timeout=1.5) as r:
-                return r.status == 200
-        except URLError:
-            return False
-
-
-def find_browser_exe() -> str:
-    for p in CHROME_CANDIDATES + EDGE_CANDIDATES:
-        if Path(p).is_file():
-            return p
-    raise FileNotFoundError("Chrome/Edge not found. Update CHROME_CANDIDATES/EDGE_CANDIDATES.")
-
-
-def launch_chrome_if_needed(log):
-    if dbg_ready():
-        log("Remote Chrome session detected — attaching…")
-        return
-    exe = find_browser_exe()
-    USER_DATA_DIR.mkdir(parents=True, exist_ok=True)
-    args = [
-        exe,
-        f"--remote-debugging-port={DEBUG_PORT}",
-        f"--user-data-dir={str(USER_DATA_DIR)}",
-        "--no-first-run",
-        "--no-default-browser-check",
-    ]
-    creationflags = 0
-    subprocess.Popen(args, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, creationflags=creationflags)
-    log("Launching Chrome…")
-    for _ in range(60):
-        if dbg_ready():
-            log("Attached to Chrome (remote debugging).")
-            return
-        time.sleep(0.25)
-    raise TimeoutError("Could not start Chrome with remote debugging port.")
 
 
 def wipe_images_only(folder: Path):
@@ -229,14 +172,15 @@ async def translate_images(
                 pass
 
     results: List[Path] = []
-    url = f"https://translate.google.co.in/?sl=auto&tl={target_lang}&op=images"
-    launch_chrome_if_needed(log or (lambda *_: None))
+    url = f"https://translate.google.com/?sl=auto&tl={target_lang}&op=images"
 
     async with async_playwright() as pw:
-        browser = await pw.chromium.connect_over_cdp(REMOTE)
+        browser = await pw.chromium.launch(
+            headless=True,  # important for server use
+            args=["--no-sandbox", "--disable-dev-shm-usage"]
+        )
         try:
-            ctx = browser.contexts[0] if browser.contexts else await browser.new_context(accept_downloads=True)
-            page = await ctx.new_page()
+            page = await browser.new_page()
             await page.goto(url)
 
             download_btn = page.get_by_role("button", name="Download translation")
@@ -269,13 +213,7 @@ async def translate_images(
 
             await page.close()
         finally:
-            if close_browser:
-                try:
-                    cdp = await browser.new_browser_cdp_session()
-                    await cdp.send("Browser.close")
-                except:
-                    pass
-                await browser.close()
+            await browser.close()
 
     return results
 
