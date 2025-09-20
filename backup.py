@@ -41,7 +41,7 @@ def new_run_dir() -> Path:
     """Unique per run; avoids wiping anything outside this isolated sandbox."""
     from datetime import datetime
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S-%f")
-    d = app_base_dir() / f"run-{stamp}"`
+    d = app_base_dir() / f"run-{stamp}"
     (d / "raw").mkdir(parents=True, exist_ok=True)
     (d / "translated").mkdir(parents=True, exist_ok=True)
     return d
