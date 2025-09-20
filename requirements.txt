@@ -1,5 +1,7 @@
-img2pdf
-pdf2image
-Pillow
-playwright
+fastapi
+uvicorn
+python-docx
 pymupdf
+pillow
+img2pdf
+playwright
